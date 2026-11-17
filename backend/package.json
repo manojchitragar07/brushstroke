@@ -1,0 +1,13 @@
+{
+  "name": "brushstroke-backend",
+  "version": "1.0.0",
+  "description": "Backend API for Atelier Baroque Interactive Brushstroke Exhibition",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "keywords": ["art", "canvas", "brushstroke", "gallery", "exhibition"],
+  "author": "Atelier Baroque",
+  "license": "MIT"
+}

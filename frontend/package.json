@@ -1,0 +1,11 @@
+{
+  "name": "brushstroke-frontend",
+  "version": "1.0.0",
+  "description": "Interactive Brushstroke Reveal Landing Page for Atelier Baroque Masterpiece",
+  "scripts": {
+    "start": "node ../backend/server.js"
+  },
+  "keywords": ["art", "canvas", "brushstroke", "creative", "interactive"],
+  "author": "Atelier Baroque",
+  "license": "MIT"
+}

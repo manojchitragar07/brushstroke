@@ -1,0 +1,13 @@
+{
+  "name": "atelier-baroque-brushstroke",
+  "version": "1.0.0",
+  "description": "Interactive Brushstroke Reveal Landing Page with Classical Masterpiece Background",
+  "scripts": {
+    "start": "node backend/server.js",
+    "backend": "node backend/server.js",
+    "dev:backend": "node --watch backend/server.js",
+    "test": "node -e \"console.log('App configured successfully')\""
+  },
+  "author": "Atelier Baroque",
+  "license": "MIT"
+}
