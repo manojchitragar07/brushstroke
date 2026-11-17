@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>Flora Bowley Studio — Painting of the Day</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Great+Vibes&family=Marck+Script&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css?v=3.0">
+</head>
+<body class="no-scroll">
+
+  <!-- Main Navigation Bar (Exact layout from video reference) -->
+  <header class="site-header">
+    <div class="nav-container">
+      
+      <!-- Left Navigation Links -->
+      <nav class="nav-left" aria-label="Primary Navigation">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#community" class="nav-link">Free Flo Community</a>
+        <a href="#courses" class="nav-link">Online Courses</a>
+        <a href="#retreats" class="nav-link">Retreats</a>
+      </nav>
+
+      <!-- Center Handwritten Signature Logo -->
+      <div class="nav-center">
+        <a href="#" class="site-logo">
+          <span class="logo-script">Flora Bowley</span>
+        </a>
+      </div>
+
+      <!-- Right Navigation Links & Utilities -->
+      <div class="nav-right">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#gallery" class="nav-link">Gallery</a>
+        <a href="#shop" class="nav-link">The Shop</a>
+        <a href="#signin" class="nav-link signin-link">Sign In</a>
+        
+        <!-- Search Icon -->
+        <button class="nav-icon-btn" aria-label="Search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+
+        <!-- Shopping Bag Icon -->
+        <button class="nav-icon-btn" aria-label="Shopping Bag">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+        </button>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button class="mobile-menu-btn" id="mobile-menu-toggle" aria-label="Toggle navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Slide-out Menu Overlay -->
+    <div class="mobile-nav-drawer" id="mobile-nav-drawer">
+      <a href="#home" class="mobile-nav-link">Home</a>
+      <a href="#community" class="mobile-nav-link">Free Flo Community</a>
+      <a href="#courses" class="mobile-nav-link">Online Courses</a>
+      <a href="#retreats" class="mobile-nav-link">Retreats</a>
+      <a href="#about" class="mobile-nav-link">About</a>
+      <a href="#gallery" class="mobile-nav-link">Gallery</a>
+      <a href="#shop" class="mobile-nav-link">The Shop</a>
+      <a href="#signin" class="mobile-nav-link">Sign In</a>
+    </div>
+  </header>
+
+  <!-- SINGLE SCREEN LANDING PAGE (NO SCROLLING) -->
+  <main class="main-landing-view">
+    <div class="hero-canvas-viewport" id="hero-viewport">
+      
+      <!-- Responsive Artwork Background: Mobile preference uses uploaded vertical fresco; Desktop uses landscape painting -->
+      <picture class="artwork-picture" id="artwork-picture">
+        <source media="(max-width: 768px)" srcset="assets/background_mobile.jpg">
+        <source media="(orientation: portrait)" srcset="assets/background_mobile.jpg">
+        <img 
+          id="artwork-img" 
+          src="assets/background_upright.jpeg" 
+          alt="Painting of the Day"
+          class="artwork-img" 
+          draggable="false" 
+        />
+      </picture>
+
+      <!-- Scratch Canvas Overlay: Erased by cursor hovering or mobile touch dragging -->
+      <canvas id="scratch-canvas" class="scratch-canvas"></canvas>
+
+      <!-- Center Typography: "Painting of the Day" & "Scratch to reveal" -->
+      <div class="hero-text-overlay" id="hero-text-overlay">
+        <h1 class="hero-title">Painting of the Day</h1>
+        <p class="hero-subtitle" id="hero-subtitle">Scratch (by hovering) to reveal</p>
+      </div>
+
+      <!-- Discreet Canvas Controls -->
+      <div class="canvas-quick-bar">
+        <button id="btn-reprime" class="btn-subtle" title="Re-cover canvas with cream wash">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M23 4v6h-6"></path>
+            <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
+          </svg>
+          <span>Reset</span>
+        </button>
+        
+        <button id="btn-reveal-all" class="btn-subtle" title="Reveal entire painting">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+            <circle cx="12" cy="12" r="3"></circle>
+          </svg>
+          <span>Reveal</span>
+        </button>
+
+        <span class="reveal-badge"><span id="reveal-pct">0</span>%</span>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Floating Chat Bubble (Matching reference video bottom-right) -->
+  <aside class="floating-chat-bubble" aria-label="Support & Chat">
+    <button class="chat-btn" aria-label="Open Studio Chat">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+      </svg>
+    </button>
+  </aside>
+
+  <!-- Scripts -->
+  <script type="module" src="main.js?v=3.0"></script>
+</body>
+</html>

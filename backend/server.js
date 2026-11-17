@@ -234,13 +234,15 @@ const server = http.createServer(async (req, res) => {
   });
 });
 
-server.listen(PORT, () => {
-  console.log(`===============================================`);
-  console.log(`🎨 Flora Bowley Studio Server is running`);
-  console.log(`   URL:          http://localhost:${PORT}`);
-  console.log(`   Frontend Dir: ${FRONTEND_DIR}`);
-  console.log(`===============================================`);
-});
+if (require.main === module) {
+  server.listen(PORT, () => {
+    console.log(`===============================================`);
+    console.log(`🎨 Flora Bowley Studio Server is running`);
+    console.log(`   URL:          http://localhost:${PORT}`);
+    console.log(`   Frontend Dir: ${FRONTEND_DIR}`);
+    console.log(`===============================================`);
+  });
+}
 
 process.on('SIGTERM', () => server.close());
 process.on('SIGINT', () => server.close());

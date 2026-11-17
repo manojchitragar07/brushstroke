@@ -1,13 +1,13 @@
 {
-  "name": "atelier-baroque-brushstroke",
+  "name": "flora-bowley-brushstroke",
   "version": "1.0.0",
-  "description": "Interactive Brushstroke Reveal Landing Page with Classical Masterpiece Background",
+  "description": "Painting of the Day - Interactive Brushstroke Reveal Landing Page",
   "scripts": {
     "start": "node backend/server.js",
-    "backend": "node backend/server.js",
-    "dev:backend": "node --watch backend/server.js",
-    "test": "node -e \"console.log('App configured successfully')\""
+    "dev": "node backend/server.js",
+    "build": "echo 'Build successful'"
   },
-  "author": "Atelier Baroque",
+  "keywords": ["art", "canvas", "brushstroke", "gallery"],
+  "author": "Flora Bowley Studio",
   "license": "MIT"
 }
